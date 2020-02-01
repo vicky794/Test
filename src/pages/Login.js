@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Alert, Button, Text, TextInput, View, StyleSheet, Image } from 'react-native';
-
+//import AppNavigator from '.src/pages/AppNavigator';
 export default class Login extends Component { 
  
   constructor(props) {
@@ -19,6 +19,7 @@ export default class Login extends Component {
   render() {
     
     return (
+      //<AppNavigator/>
       <View style={styles.container}>
         <View style={styles.loginContainer}>
           <Image style={styles.image} source={{uri: 'https://facebook.github.io/react-native/img/tiny_logo.png'}}/>
@@ -51,7 +52,9 @@ export default class Login extends Component {
             success
             title={'Register!'}
             color="#4d4dff" 
-            onPress={() => navigate('Register')}
+            onPress={() =>
+              this.props.navigation.navigate('Register')
+            }
           />
         </View>
       </View>
